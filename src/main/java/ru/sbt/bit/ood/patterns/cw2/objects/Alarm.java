@@ -1,4 +1,4 @@
-package ru.sbt.bit.ood.patterns.cw2;
+package ru.sbt.bit.ood.patterns.cw2.objects;
 
 public interface Alarm {
     AlarmState getState();

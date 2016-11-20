@@ -1,6 +1,10 @@
 package ru.sbt.bit.ood.patterns.cw2;
 
 import org.junit.Test;
+import ru.sbt.bit.ood.patterns.cw2.objects.DoorType;
+import ru.sbt.bit.ood.patterns.cw2.objects.Light;
+import ru.sbt.bit.ood.patterns.cw2.objects.LightLocation;
+import ru.sbt.bit.ood.patterns.cw2.objects.LightState;
 
 import java.util.Collection;
 import static junit.framework.TestCase.assertEquals;
@@ -14,6 +18,21 @@ public class TestSmartHome {
         SmartHome home = createSmartHomeWithSingleLight(testLight);
         // exercise
         home.turnOffTheLights();
+        // assert
+        assertLightsAreOff(home.getLights());
+    }
+
+    @Test
+    public void testTurnsOffTheLightsWhenEntranceDoorIsClosed() {
+        // setup
+        SmartHome home = new SmartHome();
+        home.addLight(createAndTurnOnTheLight());
+        home.addLight(createAndTurnOnTheLight());
+        SimpleDoor entranceDoor = new SimpleDoor(DoorType.ENTRANCE);
+        entranceDoor.setListener(new MyHomeEventsListener(home));
+        home.addDoor(entranceDoor);
+        // exercise
+        entranceDoor.close();
         // assert
         assertLightsAreOff(home.getLights());
     }

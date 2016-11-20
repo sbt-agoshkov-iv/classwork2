@@ -1,5 +1,8 @@
 package ru.sbt.bit.ood.patterns.cw2;
 
+import ru.sbt.bit.ood.patterns.cw2.objects.Door;
+import ru.sbt.bit.ood.patterns.cw2.objects.Light;
+
 import java.util.ArrayList;
 import java.util.Collection;
 

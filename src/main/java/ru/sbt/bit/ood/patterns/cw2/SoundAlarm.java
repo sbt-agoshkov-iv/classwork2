@@ -1,5 +1,8 @@
 package ru.sbt.bit.ood.patterns.cw2;
 
+import ru.sbt.bit.ood.patterns.cw2.objects.Alarm;
+import ru.sbt.bit.ood.patterns.cw2.objects.AlarmState;
+
 public class SoundAlarm implements Alarm {
 
     private AlarmState state;
